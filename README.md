@@ -4,7 +4,7 @@ Remove **duplicate contacts** from a **Microsoft 365 / Office 365** mailbox — 
 
 A single, dependency-free PowerShell script with an interactive menu, a dry-run preview, and a safe delete that sends duplicates to Deleted Items (recoverable). It talks to the **Microsoft Graph API** directly, so there are **no modules to install** and it runs on both **Windows PowerShell 5.1 (incl. the ISE)** and **PowerShell 7+**.
 
-[![CI](https://github.com/martadams89/Clean-M365Contacts/actions/workflows/ci.yml/badge.svg)](https://github.com/martadams89/Clean-M365Contacts/actions/workflows/ci.yml)
+[![CI](https://github.com/YOUR-USERNAME/Clean-M365Contacts/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR-USERNAME/Clean-M365Contacts/actions/workflows/ci.yml)
 [![PowerShell 5.1 | 7+](https://img.shields.io/badge/PowerShell-5.1%20%7C%207%2B-5391FE?logo=powershell&logoColor=white)](https://learn.microsoft.com/powershell/)
 [![Lint: PSScriptAnalyzer](https://img.shields.io/badge/lint-PSScriptAnalyzer-brightgreen?logo=powershell&logoColor=white)](https://github.com/PowerShell/PSScriptAnalyzer)
 [![Tested with Pester](https://img.shields.io/badge/tested%20with-Pester-5391FE)](https://pester.dev/)

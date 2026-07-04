@@ -23,4 +23,4 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - PSScriptAnalyzer settings, Pester unit tests, and a GitHub Actions CI pipeline
   covering PowerShell 7 (Windows + Linux) and Windows PowerShell 5.1.
 
-[1.0.0]: https://github.com/martadams89/Clean-M365Contacts/releases/tag/v1.0.0
+[1.0.0]: https://github.com/YOUR-USERNAME/Clean-M365Contacts/releases/tag/v1.0.0

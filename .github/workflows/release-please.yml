@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      # NOTE: the token here must be a PAT / App token, NOT the default
+      # GITHUB_TOKEN. PRs opened by GITHUB_TOKEN do not trigger other workflows,
+      # so the CI checks would never run on the release PR and auto-merge would
+      # hang forever waiting for required checks. Reusing RENOVATE_TOKEN is fine.
+      - name: Run release-please
+        id: release
+        uses: googleapis/release-please-action@v4
+        with:
+          token: ${{ secrets.RENOVATE_TOKEN }}
+
+      # When release-please opens a release PR, turn on auto-merge so it lands
+      # by itself once the required CI checks pass. No human interaction needed.
+      - name: Enable auto-merge on the release PR
+        if: ${{ steps.release.outputs.pr }}
+        env:
+          GH_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+        run: gh pr merge --auto --squash "${{ fromJson(steps.release.outputs.pr).number }}"

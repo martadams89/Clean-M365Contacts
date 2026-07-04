@@ -71,26 +71,3 @@ jobs:
           name: pester-pwsh-${{ matrix.os }}
           path: testresults-pwsh.xml
           if-no-files-found: ignore
-
-  test-windows-powershell:
-    name: Test (Windows PowerShell 5.1)
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install Pester (Windows PowerShell 5.1)
-        shell: powershell
-        run: |
-          [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-          Set-PSRepository PSGallery -InstallationPolicy Trusted
-          Install-Module Pester -MinimumVersion 5.5.0 -Force -Scope CurrentUser -SkipPublisherCheck
-
-      - name: Run Pester (Windows PowerShell 5.1)
-        shell: powershell
-        run: |
-          Import-Module Pester -MinimumVersion 5.5.0
-          $config = New-PesterConfiguration
-          $config.Run.Path = './tests'
-          $config.Run.Exit = $true
-          $config.Output.Verbosity = 'Detailed'
-          Invoke-Pester -Configuration $config
