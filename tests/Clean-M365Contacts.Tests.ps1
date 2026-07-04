@@ -57,19 +57,19 @@ Describe 'Get-FirstEmail' {
 
 Describe 'Get-ContactKey' {
     BeforeAll {
-        $c = New-TestContact -DisplayName 'Jane Doe' -Emails @('jane@example.com')
+        $script:c = New-TestContact -DisplayName 'Jane Doe' -Emails @('jane@example.com')
     }
 
     It 'NameEmail combines name and email' {
-        Get-ContactKey $c 'NameEmail' | Should -BeExactly 'jane doe|jane@example.com'
+        Get-ContactKey $script:c 'NameEmail' | Should -BeExactly 'jane doe|jane@example.com'
     }
 
     It 'Name uses the display name only' {
-        Get-ContactKey $c 'Name' | Should -BeExactly 'jane doe'
+        Get-ContactKey $script:c 'Name' | Should -BeExactly 'jane doe'
     }
 
     It 'Email uses the first email only' {
-        Get-ContactKey $c 'Email' | Should -BeExactly 'jane@example.com'
+        Get-ContactKey $script:c 'Email' | Should -BeExactly 'jane@example.com'
     }
 
     It 'is whitespace and case insensitive on the name' {
