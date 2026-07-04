@@ -1,0 +1,19 @@
+# Local session cache - NEVER commit (contains an encrypted refresh token)
+**/ContactCleanup/
+*.dat
+session.dat
+
+# Exported previews and deletion audit logs
+preview_*.csv
+deleted_*.csv
+
+# Pester / test output
+testresults*.xml
+coverage*.xml
+
+# Editor / OS cruft
+.vs/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
