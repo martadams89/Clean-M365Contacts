@@ -28,4 +28,4 @@ jobs:
         if: ${{ steps.release.outputs.pr }}
         env:
           GH_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
-        run: gh pr merge --auto --squash "${{ fromJson(steps.release.outputs.pr).number }}"
+        run: gh pr merge --auto --squash -R "${{ github.repository }}" "${{ fromJson(steps.release.outputs.pr).number }}"
