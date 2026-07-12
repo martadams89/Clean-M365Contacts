@@ -12,8 +12,8 @@
   },
   "packageRules": [
     {
-      "description": "Auto-merge everything — major/minor/patch/pin/digest — once required CI (PSScriptAnalyzer lint + Pester tests) is green. CI is the gate, not semver.",
-      "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
+      "description": "Auto-merge everything — major/minor/patch/pin/digest/pinDigest — once required CI (PSScriptAnalyzer lint + Pester tests) is green. CI is the gate, not semver.",
+      "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest", "pinDigest"],
       "automerge": true,
       "platformAutomerge": true
     },
