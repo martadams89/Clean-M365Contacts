@@ -2,8 +2,8 @@ name: Renovate
 
 on:
   schedule:
-    # Weekly - Renovate opens/updates PRs; native auto-merge lands them when CI is green
-    - cron: '0 4 * * 1'
+    # Daily at 2am UTC - Renovate opens/updates PRs; native auto-merge lands them when CI is green
+    - cron: '0 2 * * *'
   workflow_dispatch:
     inputs:
       logLevel:
